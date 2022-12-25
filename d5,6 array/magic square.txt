@@ -1,0 +1,35 @@
+#include <stdio.h>
+
+int main()
+{
+    int r,c;
+    scanf("%d %d", &r, &c);
+    int arr[r][c];
+    for(int i=0; i<r; i++){
+        for(int j=0; j<c; j++){
+            scanf("%d", &arr[i][j]);
+        }
+    }
+    int sum1=0, sum2=0, sum3=0, sum4=0;
+    for(int i=0; i<r; i++){
+        for(int j=0; j<c; j++){
+            sum1= sum1+ arr[i][j];
+            sum2= sum2+ arr[j][i];
+            if(i==j){
+                sum3= sum3+ arr[i][j];
+                
+            }
+            if((i+j)==(r-1)){
+                sum4= sum4+ arr[i][j];
+            }
+        }
+    }
+    if(sum1==sum2 && (sum2/r)==sum3 && sum3== sum4){
+        printf("magic");
+    }
+    else{
+        printf("not magic");
+    }
+
+    return 0;
+}

@@ -1,0 +1,25 @@
+#include <iostream>
+#include<cmath>
+
+using namespace std;
+
+int sumdigit(int n){
+    int sum=0;
+    while(n!=0){
+    sum= sum+ (n%10);
+    n=n/10;
+    }
+    return sum;
+
+}
+int main()
+{
+    int n, sum=0,ans=0;
+    cin>>n;
+    while(n>9){
+        cout<<n<<" ";
+        n= sumdigit(n);
+    }
+    cout<<n<<endl;
+    return 0;
+}
